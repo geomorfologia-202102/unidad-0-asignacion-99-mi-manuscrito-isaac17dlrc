@@ -8,12 +8,12 @@ output:
     template: svm-latex-ms.tex
     number_sections: true
 title: | 
-        | Título
+        | Estudio Profundo de la cuenca del Soco
         | Subtítulo
         | Subtítulo
 author:
-- name: Nombre del estudiante
-  affiliation: Afiliación, normalmente algo tal que "Estudiante, Universidad Autónoma de Santo Domingo (UASD)"
+- name: "Isaac De La Rosa"
+  affiliation: Afiliación, normalmente algo tal que "Estudiante Santo Domingo (UASD)"
 abstract: "Resumen del manuscrito"
 keywords: "palabra clave 1, palabra clave 2"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
