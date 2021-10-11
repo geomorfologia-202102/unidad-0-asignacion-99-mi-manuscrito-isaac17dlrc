@@ -1,4 +1,4 @@
-#video_3.
+#video_3.----
 
 library ( rgrass7 )
 gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
@@ -12,7 +12,7 @@ loc <- initGRASS(gisBase = "/usr/lib/grass78/",
                  mapset = "PERMANENT",
                  override = TRUE)
 
-#video_4
+#video_4 -----
 
 gmeta ()
 dem  <-  'datos-fuente/srtm_dem_cuenca_soco.tif'
@@ -71,7 +71,7 @@ parseGRASS("r.in.gdal")
 system('r.in.gdal --help')
 
 
-#Video 5 Explorar datos espaciales básicos entre GRASS y R
+#Video 5 Explorar datos espaciales básicos entre GRASS y R----
 
 
 #Imprimir lista de mapas ráster y dentro del vector en la región / localización activa
@@ -147,3 +147,240 @@ plot(pend_soco_g);par(op[c('mfrow','mar')])
 
 summary(pend_soco_g)
 summary(pend_soco)
+gmeta()
+
+execGRASS(
+  "g.region",
+  parameters=list(
+    raster = "dem"
+  )
+)
+execGRASS(
+  "r.mask",
+  flags = c('r','quiet')
+)
+gmeta()
+#Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
+#Video 6 ----
+
+source(
+  knitr::purl(
+    'proyeccion-importar-fuente-extension.Rmd',
+    output=tempfile()
+  )
+)
+#lista de mapas cargados----
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+execGRASS(
+  "r.watershed",
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    elevation = "dem",
+    accumulation = "accum-de-rwshed",
+    stream = "stream-de-rwshed",
+    drainage = "drainage-dir-de-rwshed",
+    basin = 'basins',
+    half_basin = 'half-basins',
+    threshold = 80
+  )
+)
+#Usar Spatial*
+library(sp)
+use_sp()
+#Paquete manejo de los raster
+library(raster)
+#DEM
+dem <- raster(readRAST('dem'))
+#Basins
+basins <- raster(readRAST('basins'))
+#Stream network
+stream <- raster(readRAST('stream-de-rwshed'))
+stream3857 <- projectRaster(stream, crs = CRS("+init=epsg:3857"), method = 'ngb')
+#Generar un vectorial de extensión de capa en EPSG:4326
+e <- extent(stream)
+e <- as(e, 'SpatialPolygons')
+proj4string(e) <- CRS("+init=epsg:32619")
+e <- spTransform(e, CRSobj = CRS("+init=epsg:4326"))
+
+library(leaflet)
+library(leafem)
+leaflet() %>%
+  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
+  addRasterImage(dem, group='DEM', opacity = 0.5) %>%
+  addRasterImage(
+    ratify(basins),
+    group='basins', opacity = 0.7,
+    colors = sample(rep(RColorBrewer::brewer.pal(12, 'Set3'),1000))) %>% 
+  addRasterImage(stream3857, project = F, group='str', opacity = 0.7, method = 'ngb', colors = 'blue') %>% 
+  addLayersControl(
+    overlayGroups = c('terrain','DEM','basins','str'),
+    options = layersControlOptions(collapsed=FALSE)) %>% 
+  addHomeButton(extent(e), 'Ver todo')
+
+unlink_.gislock()
+
+#video 7 -----
+library ( rgrass7 )
+gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
+wd <- getwd() #Directorio de trabajo
+wd
+## [1] "/home/jr/unidad-4-asignacion-1-procesos-fluviales"
+loc <- initGRASS(gisBase = "/usr/lib/grass78/",
+                 home = wd,
+                 gisDbase = paste(wd, gisdbase, sep = '/'),
+                 location = 'soco',
+                 mapset = "PERMANENT",
+                 override = TRUE)
+## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Obtener las coordenadas de la desembocadura de la cuenca de interés
+
+library(mapview)
+mapview(
+  stream3857, method='ngb', col.regions = 'blue',
+  legend = FALSE, label = FALSE, maxpixels =  910425
+)
+
+
+## Convertir las coordenadas lat/lon a EPSG:32619
+
+
+my_trans <- function(coords = NULL) {
+  require(sp)
+  pt <- SpatialPoints(matrix(coords, ncol = 2), CRS("+init=epsg:4326"))
+  foo <- spTransform(pt, CRSobj = CRS("+init=epsg:32619"))
+  bar <- as.vector(coordinates(foo))
+  return(bar)
+}
+soco_out <- my_trans(coords = c(-69.20459,18.45499))
+soco_out
+#este ultimo es el verdadero
+
+## Extraer la cuenca de interés
+
+
+execGRASS(
+  "r.water.outlet",
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    input = 'drainage-dir-de-rwshed',
+    output = 'soco-basin',
+    coordinates = soco_out
+  )
+)
+## Convertir la cuenca a vectorial en GRASS
+
+execGRASS(
+  "r.to.vect",
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    input = 'soco-basin',
+    output = 'soco_basin',
+    type = 'area'
+  )
+)
+
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Traer a R la cuenca del arroyo Pantuflas
+soco_bas <- readVECT('soco_basin')
+soco_bas
+plot(soco_bas)
+soco_bas4326 <- spTransform(soco_bas, CRSobj = CRS("+init=epsg:4326"))
+leaflet() %>% 
+  addProviderTiles(providers$Stamen.Terrain) %>%
+  addRasterImage(stream, opacity = 0.7, method = 'ngb', colors = 'blue') %>% 
+  addPolygons(data = soco_bas4326) %>% 
+  leafem::addHomeButton(extent(soco_bas4326), 'Ver cuenca')
+#video 8  Extraer una red drenaje con r.stream.extract. Visualizar con leaflet----
+
+
+knitr::opts_chunk$set(
+  echo = TRUE,
+  collapse=TRUE,
+  eval = T
+)
+options(knitr.duplicate.label = "allow")
+
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+#usar la cuenca soco como mascara
+execGRASS(
+  "r.mask",
+  flags = c('verbose','overwrite','quiet'),
+  parameters = list(
+    vector = 'soco_basin'
+  )
+)
+
+## Extraer la red de drenaje de la cuenca soco
+
+
+execGRASS(
+  "r.stream.extract",
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    elevation = 'dem',
+    threshold = 80,
+    stream_raster = 'soco-stream-de-rstr',
+    stream_vector = 'soco_stream_de_rstr'
+  )
+)
+
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Traer a R la red de drenaje de la cuenca soco
+
+
+soco_net <- readVECT('soco_stream_de_rstr', ignore.stderr = T)
+soco_net
+plot(soco_net)
+soco_net4326 <- spTransform(soco_net, CRSobj = CRS("+init=epsg:4326"))
+soco_net4326
+soco_centroid <- coordinates(rgeos::gCentroid(soco_bas4326))
+pant_centroid
+soco_net_r <- raster(readRAST('pantuflas-stream-de-rstr'))
+soco_net_r
+soco_net_r3857 <- projectRaster(soco_net_r, crs = CRS("+init=epsg:3857"), method = 'ngb')
+soco_net_r3857
+leaflet() %>% 
+  setView(lng = soco_centroid[1], lat = soco_centroid[2], zoom = 11) %>%
+  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
+  addRasterImage(soco_net_r3857, opacity = 0.7, method = 'ngb', colors = 'grey20', group = 'str_raster') %>% 
+  addPolylines(data = soco_net4326, weight = 3, opacity = 0.7, group = 'str_vect') %>% 
+  leafem::addHomeButton(extent(soco_net4326), 'Ver todo') %>% 
+  addLayersControl(
+    overlayGroups = c('terrain','str_vect','str_raster'),
+    options = layersControlOptions(collapsed=FALSE)) 
