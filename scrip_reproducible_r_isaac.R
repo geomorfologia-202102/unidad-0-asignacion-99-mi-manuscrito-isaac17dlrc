@@ -1,10 +1,4 @@
 #video_3.----
-source(
-  knitr::purl(
-    'crear-una-cuenca-con-r-water-outlet.Rmd',
-    output=tempfile()
-  )
-)
 library ( rgrass7 )
 gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
 wd <- getwd() #Directorio de trabajo
@@ -169,12 +163,6 @@ gmeta()
 unlink_.gislock()
 #Video 6 ----
 
-source(
-  knitr::purl(
-    'proyeccion-importar-fuente-extension.Rmd',
-    output=tempfile()
-  )
-)
 #lista de mapas cargados----
 execGRASS(
   'g.list',
@@ -272,7 +260,7 @@ my_trans <- function(coords = NULL) {
   bar <- as.vector(coordinates(foo))
   return(bar)
 }
-soco_out <- my_trans(coords = c(-69.20322,18.45678))
+soco_out <- my_trans(coords = c(-69.20322,18.45688))
 soco_out
 #este ultimo es el verdadero
 
@@ -321,13 +309,6 @@ leaflet() %>%
 #video 8  Extraer una red drenaje con r.stream.extract. Visualizar con leaflet----
 
 unlink_.gislock()
-source(
-  knitr::purl(
-    'crear-una-cuenca-con-r-water-outlet.Rmd',
-    output=tempfile()
-  )
-)
-
 
 execGRASS(
   'g.list',
@@ -441,7 +422,7 @@ execGRASS(
 
 ## Mostrar lista nuevamente
 
-```{r}
+
 execGRASS(
   'g.list',
   flags = 't',
@@ -454,11 +435,11 @@ execGRASS(
 
 ### Simbología única
 
-```{r, results='hide', warning=FALSE, message=FALSE}
-order <- readVECT('order_all')
-```
 
-```{r}
+order <- readVECT('order_all')
+
+
+
 order4326 <- spTransform(order, CRSobj = CRS("+init=epsg:4326"))
 leaflet() %>% 
   addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
@@ -480,7 +461,7 @@ leaflet() %>%
 
 ### Simbología aplicando grosor según orden de red
 
-```{r}
+
 leaflet() %>% 
   addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
   addPolylines(
@@ -498,7 +479,7 @@ leaflet() %>%
 
 ### Obtener órdenes de red mínimo y máximo
 
-```{r}
+
 #Estadísticas para obtener los valores mínimo y máximo del orden de red de Strahler
 rinfo.ordstra <- execGRASS(
   'r.info',
@@ -518,7 +499,7 @@ minmaxord
 
 ### Delimitar cuencas, convertirlas de ráster a vectorial
 
-```{r}
+
 sapply(
   min(minmaxord):max(minmaxord),
   function(x){
@@ -546,7 +527,6 @@ sapply(
 
 ### Representar las cuencas con leaflet
 
-```{r, results='hide', warning=FALSE, message=FALSE}
 sapply(
   min(minmaxord):max(minmaxord),
   function(x){
@@ -600,7 +580,7 @@ rb
 
 ## Estadísticas de red ampliadas
 
-```{r}
+
 execGRASS(
   "r.stream.stats",
   flags = c('overwrite','quiet'),
@@ -613,3 +593,37 @@ execGRASS(
 )
 file.show('soco_stats_expanded.txt')
 
+#Video 11-----
+
+
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+
+## Obtener coordenada
+mapview(order, col.regions = 'blue', legend = FALSE)
+ 
+devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/lfp_network.R') 
+#Cargada como función "LfpNetwork"
+LfpNetwork(
+  xycoords = my_trans(c(-69.19744, 18.45272)),
+  suffix ='soco',
+  stream_vect ='order_all',
+  direction ='drainage-dir-de-rstr'
+)
+
+## Mostrar lista nuevamente
+
+
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)

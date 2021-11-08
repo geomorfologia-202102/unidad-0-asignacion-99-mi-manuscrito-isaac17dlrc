@@ -1,6 +1,6 @@
 COMMAND: v.in.ogr --overwrite --quiet input="datos-fuente/srtm_dem_cuenca_soco.geojson" output="dem_extent" min_area=0.0001 type="" snap=-1
 GISDBASE: /home/isaacdelarosa/Manuscrito Isaac/unidad-0-asignacion-99-mi-manuscrito-isaac17dlrc/grass-data-test
-LOCATION: soco MAPSET: PERMANENT USER: isaacdelarosa DATE: Sun Oct 17 23:13:44 2021
+LOCATION: soco MAPSET: PERMANENT USER: isaacdelarosa DATE: Mon Nov  8 18:45:25 2021
 -----------------------------------------------------
 1 input polygons
 Total area: 2.45385E+09 (1 areas)

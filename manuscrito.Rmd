@@ -38,12 +38,16 @@ header-includes:
 ---
 
 # Introducción
+Si bien es cierto que cad vez que se hace un estudio de este tipo o relacionado a este, es en cierto sentido intermiable por la poca informacion ofrecida por las partes encargadas, pero tengo por seguro que este sera una inolvidable excepcion. En la republica Dominicana, existe una cuenta, una de las mas importantes en el este de dicho pais, el cual comprende desde la parte norte de la region este hasta el sur de dicha region, politicamente comienza desde la Provincia de El Seibo y la Provincia de Hato Mayor de el rey, en las zonas muy forestales y altas de la Cordillera del Seibo (coordillera oriental), y Dicha cuenca sera el punto de concentracion de nuestra investigacion.
 
+Posee una forma en cierto sentido, normal, pensando el punto de desemboque, pero, ¿Posee algo mas que no sepamos? ¿que hace esta cuenca una de las mas importantes de la region?, ¿Existe o podria existir un area de estudio profundizado geomorfologicamente que impacto a la sociedad geografica latinoamericana o e mundo?
 
 
 \ldots
 
 # Metodología
+Para esta investigacion hemos usado ciertos elementos de conocimiento presente en geografica, utilizados para estudio morfometrico de cuenta, como es el caso 
+#blablabla sigo despues, i´m tired
 
 \ldots
 
