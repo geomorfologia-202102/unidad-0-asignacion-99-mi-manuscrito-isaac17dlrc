@@ -1,3 +1,0 @@
-COMMAND: r.lfp --overwrite input=drainage-dir-de-rstr coordinates=478542.644542821,2040746.2172638 output=LfpNetwork_lfp_Soco
-GISDBASE: /home/isaacdelarosa/Manuscrito Isaac/unidad-0-asignacion-99-mi-manuscrito-isaac17dlrc/grass-data-test
-LOCATION: soco MAPSET: PERMANENT USER: isaacdelarosa DATE: Mon Nov  8 18:47:56 2021

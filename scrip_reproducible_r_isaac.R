@@ -627,3 +627,68 @@ execGRASS(
     type = c('raster', 'vector')
   )
 )
+
+##Representar con leaflet
+
+
+lfp <- readVECT('LfpNetwork_lfp_all_final_soco')
+
+
+
+lfp4326 <- spTransform(lfp, CRSobj = CRS("+init=epsg:4326"))
+leaflet() %>%
+  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
+  addPolylines(
+    data = lfp4326, weight = 3, opacity = 0.7, group = 'order',
+    label = ~as.character(cat),
+    highlightOptions = highlightOptions(color = "white",
+                                        weight = 5, bringToFront = F, opacity = 1),
+    labelOptions = labelOptions(noHide = T,
+                                style = list(
+                                  "font-size" = "8px",
+                                  "background" = "rgba(255, 255, 255, 0.5)",
+                                  "background-clip" = "padding-box",
+                                  "padding" = "1px"))) %>% 
+  leafem::addHomeButton(extent(lfp4326), 'Ver todo')
+
+
+## Exportar a KML
+
+execGRASS(
+  'v.out.ogr',
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    input = 'LfpNetwork_lfp_all_final_soco',
+    output = 'lfp_kml.kml',
+    format = 'KML',
+    dsco = 'NameField=cat'
+  )
+)
+
+## Obtención de perfiles longitudinales e índices de concavidad
+
+
+devtools::source_url('https://raw.githubusercontent.com/geomorfologia-master/unidad-4-asignacion-1-procesos-fluviales/master/lfp_profiles_concavity.R')
+soco_conv_prof <- LfpProfilesConcavity(
+  xycoords = my_trans(c(-69.19744, 18.45272)),
+  network = 'LfpNetwork_lfp_all_final_soco',
+  prefix = 'soco',
+  dem = 'dem',
+  direction = 'drainage-dir-de-rstr',
+  crs = '+init=epsg:32619',
+  smns = 0.5,
+  nrow = 3)
+
+## Mostrar resultados
+
+
+soco_conv_prof$profiles
+soco_conv_prof$concavityindex
+soco_conv_prof$dimensionlessprofiles
+
+##  Tabla dx / dy, tanto en metros como adimensional. Útiles para construir perfiles por cuenta propia
+
+soco_conv_prof$lengthzdata %>% tibble::as.tibble()
+soco_conv_prof$lengthzdatadmnls %>% tibble::as.tibble()
+
+
