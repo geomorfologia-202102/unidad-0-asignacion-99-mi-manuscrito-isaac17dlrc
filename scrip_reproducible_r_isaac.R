@@ -691,4 +691,33 @@ soco_conv_prof$dimensionlessprofiles
 soco_conv_prof$lengthzdata %>% tibble::as.tibble()
 soco_conv_prof$lengthzdatadmnls %>% tibble::as.tibble()
 
+##Video 12: GRASS GIS desde R: Parámetros de cuenca con r.basin -----
 
+gmeta()
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Convertir a números enteros la extensión y la resolución del DEM
+
+
+library(raster)
+rutadem <- 'datos-fuente/srtm_dem_cuenca_soco.tif'
+rawextent <- extent(raster(rutadem))
+rawextent
+devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/integerextent.R')
+devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/xyvector.R')
+newextent <- intext(e = rawextent, r = 90, type = 'inner')
+newextent
+gdalUtils::gdalwarp(
+  srcfile = 'data/dem.tif',
+  dstfile = 'data/demint.tif',
+  te = xyvector(newextent),
+  tr = c(90,90),
+  r = 'bilinear',
+  overwrite = T
+)
