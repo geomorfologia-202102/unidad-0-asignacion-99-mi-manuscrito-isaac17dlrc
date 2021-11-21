@@ -714,8 +714,8 @@ devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/xyv
 newextent <- intext(e = rawextent, r = 90, type = 'inner')
 newextent
 gdalUtils::gdalwarp(
-  srcfile = 'data/dem.tif',
-  dstfile = 'data/demint.tif',
+  srcfile = 'datos-fuente/srtm_dem_cuenca_soco.tif',
+  dstfile = 'srtm_dem_cuenca_socoint.tif',
   te = xyvector(newextent),
   tr = c(90,90),
   r = 'bilinear',
