@@ -1,6 +1,6 @@
-COMMAND: v.in.ogr --quiet input="/home/isaacdelarosa/Manuscrito Isaac/unidad-0-asignacion-99-mi-manuscrito-isaac17dlrc/grass-data-test/soco/PERMANENT/.tmp/rstudio-ubuntu-s-1vcpu-2gb-nyc3-01/798.0.gpkg" layer="soco" output="soco" min_area=0.0001 type="" snap=-1
+COMMAND: v.in.ogr --quiet input="/home/isaacdelarosa/Manuscrito Isaac/unidad-0-asignacion-99-mi-manuscrito-isaac17dlrc/grass-data-test/soco/PERMANENT/.tmp/rstudio-ubuntu-s-1vcpu-2gb-nyc3-01/706.0.gpkg" layer="soco" output="soco" min_area=0.0001 type="" snap=-1
 GISDBASE: /home/isaacdelarosa/Manuscrito Isaac/unidad-0-asignacion-99-mi-manuscrito-isaac17dlrc/grass-data-test
-LOCATION: soco MAPSET: PERMANENT USER: isaacdelarosa DATE: Sun Nov 21 07:35:38 2021
+LOCATION: soco MAPSET: PERMANENT USER: isaacdelarosa DATE: Sun Nov 28 12:23:18 2021
 -----------------------------------------------------
 1 input polygons
 Total area: 9.93921E+08 (2 areas)

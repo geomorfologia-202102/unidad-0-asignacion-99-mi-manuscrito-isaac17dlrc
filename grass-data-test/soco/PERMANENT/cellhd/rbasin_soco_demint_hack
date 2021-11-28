@@ -1,12 +1,12 @@
 proj:       1
 zone:       19
-north:      2093624.03369
-south:      2038820.45941
-east:       514574.14079
-west:       469798.80835
-cols:       505
-rows:       618
-e-w resol:  88.66402463
-n-s resol:  88.67892278
+north:      2093580
+south:      2038860
+east:       514530
+west:       469800
+cols:       497
+rows:       608
+e-w resol:  90
+n-s resol:  90
 format:     0
 compressed: 5

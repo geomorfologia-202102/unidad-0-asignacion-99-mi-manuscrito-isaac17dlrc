@@ -1,7 +1,0 @@
-COMMAND: r.to.vect --verbose -v input="rbasin_soco_demint_mainchannel_dim_thin" output="rbasin_soco_demint_mainchannel_dim" type="line" column="value"
-GISDBASE: /home/isaacdelarosa/Manuscrito Isaac/unidad-0-asignacion-99-mi-manuscrito-isaac17dlrc/grass-data-test
-LOCATION: soco MAPSET: PERMANENT USER: isaacdelarosa DATE: Sun Nov 21 08:14:17 2021
----------------------------------------------------------------------------------
-COMMAND: v.to.points input="rbasin_soco_demint_mainchannel_dim" layer="1" type="line" output="rbasin_soco_demint_mainchannel_dim_point" dmax=100
-GISDBASE: /home/isaacdelarosa/Manuscrito Isaac/unidad-0-asignacion-99-mi-manuscrito-isaac17dlrc/grass-data-test
-LOCATION: soco MAPSET: PERMANENT USER: isaacdelarosa DATE: Sun Nov 21 08:14:17 2021
