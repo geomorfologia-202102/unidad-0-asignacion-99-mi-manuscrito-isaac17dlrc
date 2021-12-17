@@ -672,12 +672,12 @@ devtools::source_url('https://raw.githubusercontent.com/geomorfologia-master/uni
 soco_conv_prof <- LfpProfilesConcavity(
   xycoords = my_trans(c(-69.19744, 18.45272)),
   network = 'LfpNetwork_lfp_all_final_soco',
-  prefix = 'soco',
+  prefix = 's',
   dem = 'dem',
   direction = 'drainage-dir-de-rstr',
   crs = '+init=epsg:32619',
-  smns = 0.5,
-  nrow = 3)
+  smns =0.9,
+  nrow =5)
 
 ## Mostrar resultados
 
@@ -686,7 +686,7 @@ soco_conv_prof$profiles
 soco_conv_prof$concavityindex
 soco_conv_prof$dimensionlessprofiles
 
-##  Tabla dx / dy, tanto en metros como adimensional. Útiles para construir perfiles por cuenta propia
+m ##  Tabla dx / dy, tanto en metros como adimensional. Útiles para construir perfiles por cuenta propia
 
 soco_conv_prof$lengthzdata %>% tibble::as.tibble()
 soco_conv_prof$lengthzdatadmnls %>% tibble::as.tibble()
@@ -883,8 +883,8 @@ HypsoBasinsOrder2 <- HypsoIntCurve(
   basins = 'r_stream_basins_2',
   dem = 'dem',
   labelfield = 'cat',
-  nrow = 5,
-  labelsize = 3)
+  nrow =7,
+  labelsize = 12)
 
 HypsoBasinsOrder2$HypsoInt
 HypsoBasinsOrder2$HypsoCurve
@@ -904,3 +904,8 @@ HypsoBasinsOrder3$HypsoInt
 HypsoBasinsOrder3$HypsoCurve
 mapview(bas3, zcol='cat', col.regions = 'blue', legend = FALSE) %>%
   addStaticLabels(label = bas3$cat)
+
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+
+
+unlink_.gislock()
