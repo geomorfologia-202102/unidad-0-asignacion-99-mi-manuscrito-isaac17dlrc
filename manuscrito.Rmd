@@ -8,14 +8,13 @@ output:
     template: svm-latex-ms.tex
     number_sections: true
 title: | 
-        | Estudio Profundizado y comparativo de la cuenca del Soco
-        | Subtítulo
-        | Subtítulo
+       | Análisis Morfométrico fluvial de la cuenca del Soco por medio del uso de sotfware de código abierto
+
 author:
 - name: "Isaac De La Rosa"
-  affiliation: "Estudiante de la Licenciatura en Geografia Mencion Representacion Espacial en la Universida Autonoma de Santo Domingo (UASD)"
-abstract: Como una ciencia complementaria de la geografía física, la geomorfología ha sido una de las mas importantes al momento de crear una perspectiva real del relieve, siendo este util para explicar causas y consecuencias de movimientos y poder describir los mismos. Dentro de este encontramos la geomorfología fluvial, que como etimológicamnte se indica, es la encargada de describir los procesos fluviales en la litosfera, asi como tambien sus causas y consecuencias en su paso por la corteza terrestre, Pero notese lo poco atendido que está la morfometría fluvial en nuestro pais. Muchas fuentes afirman que el funcionamiento de una cuenca se asemeja al de un colector que recibe la precipitación y la convierte en escurrimiento superficial o sub superficial; esta transformación depende de las condiciones climáticas y las características físicas de la cuenca. La República Dominicana nunca ha tenido como fin el desarrollo de cualquier ciencia geográfica para la obtencion de informacion crucial de la realidad geográfica puesto que la morfometría fluvial explica con mejor perspectiva las razones hidrológicas, esta tambien describe su organizacion fluvial, ordenes de red, drenajes, puntos mas elevados, cursos mas cortos y mas largos.  El análisis realizado a La cuenca del Soco arroja resultados impresionantes, cuales explican que tiene como área unos 988.62 km2 y un perimetro de 227.63 km, siendo esta la cuenca mas grande de la region este, esta logra una elevacion maxima de 646.96m, la elevacion media 136.34m y la elevación mínima 0.032. Dicha cuenca localizada en la región este del país, iniciando entre las subregiones Yuma y Higüamo, con desembocadura en la boca del soco. Se comprueba en los perfiles longitudinales los cursos concavos y los cursos convexos. se comprueba que la curva e integral hipsométrica está asociada a factores evolutivos de las regiones que posee el relieve. Este Análisis asi como muchos otros ponen en veracidad lo eficáz que puede llegar a ser la tecnología geoespacial para el análisis cuantitativo basado en una cuenca hidrografica, sin importar su tamaño.
-keywords: "Geomorfología fluvial, Morfometría de Cuenca, Analisis Morfométrico"
+  affiliation: "Estudiante de la Licenciatura en Geografia Mención Representación Espacial en la Universidad Autónoma de Santo Domingo (UASD)"
+abstract: El análisis realizado a la cuenca del Soco arroja resultados impresionantes, basandose en la descripción de la morfometría fluvial de la Cuenca y como una ciencia complementaria de la geografía física, la geomorfología ha sido una de las mas importantes al momento de crear una perspectiva real del relieve, siendo este util para explicar causas y consecuencias de movimientos y poder describir los mismos.  La cuenca del Soco inicia entre las subregiones Yuma y Higüamo, con desembocadura en la boca del soco. Se comprueba en los perfiles longitudinales los cursos concavos y los cursos convexos. se también comprueba que la curva e integral hipsométrica está asociada a factores evolutivos de las regiones que posee el relieve.  De forma notoria, se observa Dentro de este encontramos la geomorfología fluvial, que como etimológicamnte se indica, es la encargada de describir los procesos fluviales en la litosfera, asi como tambien sus causas y consecuencias en su paso por la corteza terrestre, pero existe poca bibliografía científica sobre morfometría fluvial dominicana. De una forma notoria, Muchas fuentes afirman que el funcionamiento de una cuenca se asemeja al de un colector que recibe la precipitación y la convierte en escurrimiento superficial o sub superficial; esta transformación depende de las condiciones climáticas y las características físicas de la cuenca. El soco tiene como área unos 988.62 km2 y un perimetro de 227.63 km, siendo esta la cuenca mas grande de la region este, esta logra una elevacion maxima de 646.96m, la elevación media 136.34m y la elevación mínima 0.032 m, dicha cuenca localizada en la región este del país. Estos resultados son provocados para demostrar la actual información de la la morfometría fluvial de la Cuenca en cuestión. La República Dominicana con el paso de los años va quedando en el tiempo al ofrecer datos de tal importancia como son los antes vistos, y para la realización de trabajos de análisis morfométrico futuros, o análisis geodésicos, biológicos o geológicos, es importante tener datos de fuente confiable y segura con datos reales.
+keywords: "Geomorfología fluvial, Morfometría de Cuenca, Análisis Morfométrico, Cuenca del Soco"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
 fontfamily: mathpazo
@@ -36,192 +35,63 @@ header-includes:
     \renewcommand{\thefigure}{S\arabic{figure}}
     }
 ---
-# Area de Estudio
 
-  El estudio fue concentrado en la cuenca del Soco, ubicada en la zona Este de la Republica Dominicana, con una extensión superficial de 988.62 km2, siendo esta una de las mas grandes del pais, con forma ilustrativa a un triangulo isosceles invertido. Dicha cuenca tiene como rio principal y/o cabecera el río Soco, teniendo su nacimiento en una de las montañas de la Cordillera del Seibo, al sur de la poblacion de miches, y desembocando así en la Boca del Soco, donde termina la cuenca de análisis.
-  
-  Dicha cuenca pasa por Hato Mayor Del Rey (70,141 Hab) El Seibo (97,144 Hab) La Romana (139,671 Hab) y San Pedro de Macorís (217, 141). cuenca ubicada de Nor Noreste hasta Sur Suroreste, comprendiendo desde elevaciones superiores de la cordillera del Seibo hasta la Llanura costera del caribe, Vertiendo sus aguas en el mar caribe.
 
 # Introducción
-  Nunca ha sido tan importante como hoy conocer Las características físicas de una cuenca de drenaje, las cuales revisten gran importancia para la realización de estudios geomorfológicos, hidrológicos y geotécnicos, ya que influyen en el desarrollo de múltiples procesos fluviales y en el riesgo de inundación morfometria de cuenca. Si bien es cierto que cada vez que se hace un estudio de este tipo o relacionado a este, es en cierto sentido intermiable por la poca informacion ofrecida por las partes encargadas. [@busnelli2014morfometria], aunque en este articulo tendremos la exepcion.  
+ Seamos geógrafos o aspirantes a serlo, es importante conocer las características físicas de una cuenca de drenaje, las cuales revisten gran importancia para la realización de estudios geomorfológicos, hidrológicos y geotécnicos, ya que influyen en el desarrollo de múltiples procesos fluviales y en el riesgo de inundación morfometría de cuenca. Si bien es cierto que cada vez que se hace un estudio de este tipo o relacionado a este, es en cierto sentido intermiable por la poca informacion ofrecida por las partes encargadas. [@busnelli2014morfometria], aunque en este artículo tendremos la exepción.  
   
-  En la República Dominicana, existe una cuenca, una de las mas importantes en el este de dicho pais, el cual comprende desde la parte norte de la region este hasta el sur de dicha región, políticamente comenzando desde la Provincia de El Seibo y la Provincia de Hato Mayor del rey, en las zonas muy forestales y altas de la Cordillera del Seibo (coordillera oriental), y dicha cuenca sera el punto de concentración de nuestra investigación. Posee una forma en cierto sentido pensando el punto de desemboque, pero, ¿Posee algo mas que no sepamos?, ¿Existe o podria existir un área de estudio profundizado geomorfológicamente que impacto a la sociedad geográfica latinoamericana o e mundo?.
+ La cuenca el río Soco es una de las mas importantes en el este de dicho pais, la cual comprende desde la parte norte de la región este hasta la parte sur de dicha región, políticamente comenzando desde la Provincia de El Seibo y la Provincia de Hato Mayor del rey, en las zonas muy forestales y altas de la cordillera del Seibo (cordillera Oriental), y dicha cuenca sera el punto de concentración de nuestra investigación. Posee una forma en cierto sentido pensando el punto de desemboque.
 
-  Reivindicar la geomorfología, es decir, los procesos y formas abióticos, como valor en sí mismo del sistema fluvial y como clave de conservación y restauración constituye una innovación en nuestro país, donde el desconocimiento geomorfológico en el ámbito ambiental es muy grave, donde muchas veces la geomorfología no se considera (como ocurre en muchos estudios de impacto) y no es que se infravalore, sino que directamente no existe o se desprecia. [@ollero2011innovacion]. 
+  Reivindicar la geomorfología, es decir, los procesos y formas abióticos, en este caso, como valor en sí mismo del sistema fluvial y como clave de conservación y restauración constituye una innovación en nuestro país, donde el desconocimiento geomorfológico en el ámbito ambiental es muy grave, donde muchas veces la geomorfología no se considera (como ocurre en muchos estudios de impacto) y no es que se infravalore, sino que directamente no existe o se desprecia. [@ollero2011innovacion]. 
   
-El conocimiento morfometrico de las cuentas de la Republica Dominicana es mucho menos del 30 por cierto de su totalidad, haciendo meramente imposible los hallazgos de geogormas interesantes para estudiar y analizar morfométricamnete profundo. sin embargo,  El concepto de Horton-Strahler ha sido importante en la geomorfología de las cuencas fluviales; describe propiedades de escala e identifica GIUH, pero también ha atraído críticas, porque depende del área de umbral S, que se utiliza para extraer la red de canales de los modelos digitales de elevación (MDE), de la posición de la salida y del escaso número de ratios utilizados para identificar las leyes de escala. Para superar estas limitaciones, este artículo propone nuevos índices independientes de S y que tienen propiedades similares a las relaciones de Horton-Strahler.[@moussa2009definition].
+  Lo que vemos en este análisis morfométrico fluvial son datos provocados de fuentes de código libre, realizandose en el Soco para  hallazgos y  contribuciones a la ciencia con mas información útil compartida, ya sea el primer trabajo de esta area geomorfológoica o no.
+   
+   Imporante a tomar en cuenta que el concepto de Horton-Strahler ha sido importante en la geomorfología de las cuencas fluviales; describe propiedades de escala e identifica GIUH, pero también ha atraído críticas, porque depende del área de umbral S, que se utiliza para extraer la red de canales de los modelos digitales de elevación (MDE), de la posición de la salida y del escaso número de ratios utilizados para identificar las leyes de escala. Para superar estas limitaciones, este artículo propone nuevos índices independientes de S y que tienen propiedades similares a las relaciones de Horton-Strahler.[@moussa2009definition].
 
-  La Geomorfología Regional, definida como ciencia que se ocupa de describir y explicar la distribución espacial de las formas del terreno a escala regional y sub-regional, ha sido considerada por la planificación física y la ordenación del territorio más clásicas, como la única disciplina capaz de analizar las “líneas maestras” que definen el carácter complejo del territorio y del paisaje. 
+  La geomorfología regional, definida como ciencia que se ocupa de describir y explicar la distribución espacial de las formas del terreno a escala regional y subregional, ha sido considerada por la planificación física y la ordenación del territorio más clásicas, como la única disciplina capaz de analizar las “líneas maestras” que definen el carácter complejo del territorio y del paisaje. 
 
   La utilización del relieve como base física para la delimitación y definición de unidades territoriales integradas, básicas para gestionar el territorio y sus recursos, ha constituido además uno de los métodos tradicionalmente empleados por algunas de las disciplinas ambientales que en mayor medida han contribuido al acercamiento de la planificación física clásica hacia la nueva ordenación integral; es el caso de la Ecología del  Paisaje, la Ecología Humana y la Geografía Ambiental.[@munoz2009geomorfologia].
 
-  Este trabajo muestra información actualizada sobre la cuenca del Soco, centrandose su morfometría tantos aspectos sean conocidos, realizado con apoyo de softwares libres y scripts adaptados al área de estudio, la cuenca del Soco. También, se inquiere sobre la existencia de una relación entre: los perfiles longitudinales e índice de concavidad con la litología de la cuenca; la relación entre los parámetros morfométricos con las características litológica y si hay factores que se asocien con la curva e integral hipsométricas de la cuenca. Por medio de parámetros morfométricos se busca identificar qué forma tienen la cuenca y su red de drenaje. De igual manera, se trata de comprender como se organiza la red de drenaje; y, tras el estudio de la cuenca y su red de drenaje, se indaga si se producen ciertros movimientos de reorganización en ellas. 
+  Este trabajo se centra en la cuenca del soco, como objetivo: su morfometría, tantos aspectos sean conocidos, realizado con apoyo de softwares libres y scripts adaptados al área de estudio, la cuenca del Soco. También, se inquiere sobre la existencia de una relación entre: los perfiles longitudinales e índice de concavidad con la litología de la cuenca; la relación entre los parámetros morfométricos con las características litológica y si hay factores que se asocien con la curva e integral hipsométricas de la cuenca.Por medio de parámetros morfométricos se busca identificar qué forma tienen la cuenca y su red de drenaje. De igual manera, se trata de comprender como se organiza la red de drenaje; y, tras el estudio de la cuenca y su red de drenaje, se indaga si se producen ciertros movimientos de reorganización en ellas.  Al realizar estas investigación nos preguntamos ¿Cual es el orden concreto de la cuenca del Soco? ¿Qué otra información obtenemos al investigar esta cuenca? ¿Podrían utilizarse sus aguas para hacer una presa o represa en ella?
 
+# Area de Estudio
 
+  El  presente estudio fue realizado en la cuenca del río Soco, ubicada en la zona Este de la República Dominicana, con una extensión superficial de 988.62 km2, siendo esta una de las mas grandes del pais, con forma ilustrativa a un triangulo isosceles invertido. Dicha cuenca tiene como rio principal y/o cabecera el río Soco, teniendo su nacimiento en una de las montañas de la Cordillera del Seibo, al sur de la poblacion de miches, y desembocando así en la Boca del Soco, donde termina la cuenca de análisis.
+  
+  Dicha cuenca pasa por Hato Mayor Del Rey (70,141 Hab) El Seibo (97,144 Hab) La Romana (139,671 Hab) y San Pedro de Macorís (217, 141). cuenca ubicada de Nor Noreste hasta Sur Suroreste, comprendiendo desde elevaciónes superiores de la cordillera del Seibo hasta la Llanura costera del caribe, Vertiendo sus aguas en el mar caribe.
+  
 # Metodología 
-  Para la realizacion de estas operaciones utilizo operaciones de analisis morfometrico de redes de drenaje y cuenca de los paquetes de software de codigo abierto GRASS GIS, utilizando como medio de interpretacion y organizacion cuantitavia y/o cualitativa de informacion R como entorno de programacion [@allaire2012rstudio]. Dentro de Grass Gis fueron utilizados otros paquetes para la optima comprension de datos, con la utilizacion de un modelo digital de elevacion (para lo siguiente, MDE) de la mision radar del transbordador espacia Shuttle [@lemos2004avaliaccao], con altura aproximada a 90 metros para la extraccion de informacion requiriente.
+  Para la realización de estas operaciones se utilizaron operaciones de análisis morfométrico de redes de drenaje y cuenca de los paquetes de software de código abierto GRASS GIS, utilizando como medio de interpretación y organización cuantitativa y/o cualitativa de información R como entorno de programación [@allaire2012rstudio] implementado y desglosado en la computadora de uso familiar. 
+  
+Lo utilizado para la caputura de resultados fue de varios addons, y apertura de mapas y análisis en R, donde se hizo de los mismos para asi extraer resultados, creando primero una región donde se guardaron los datos recogidos en el analisis de la cuenca, uso el cual se le dió en orden de metodos.
 
-  En la acumulacion de flujo, los parametros de cuenca del mismo, demas como elevación, drenaje, y otros mas, fueron calculados a través del addon de GRASS GIS  r.watershed [@lozar2003geographic], contando con un umbral acumulado de 82 celdas, en un MDE. Las capas generadas se ingresaron a R al junto de la libreria ap y al igual manejo con la libreria raster.
+  Dentro de GRASS GIS fueron utilizados otros paquetes para la óptima comprensión de datos, con la utilización de un modelo digital de elevacion (para lo siguiente, MDE) de la misión radar del transbordador espacia Shuttle [@lemos2004avaliaccao], con altura aproximada a 90 metros para la extracción de información requiriente.
+
+Para extraer la cuenca se utilizó el addon r.water.outlet [@lozar2003geographic], usado también el addon r.vect, lo que llevó a convertir el raster resultante en vectorial, para así colocacarlo en R. De igual forma se aplicó el addon r.stream.extract [@jasiewicz2011new], para lograr extraer la red de drenaje donde se llevaron a R los resultados del mismo.
+  
+   En la acumulación de flujo, los parámetros de cuenca del mismo, como elevación, drenaje, y otros más, fueron calculados a través del addon de GRASS GIS  r.watershed [@lozar2003geographic], contando con un umbral acumulado de 82 celdas, en un MDE. Las capas generadas se ingresaron a R al junto de la libreria ap y al igual manejo con la libreria raster
+   Por consiguiente, en la orden de red y el análisis hortoniano, se puso en uso el addon       r.stream.extract para producir un mapa de dirección de flujo. Por otra parte, para la creación de mapas de ordenes de red se uso el addon r.stream.order [@jasiewicz2011new], en el cual se usó la clasificación de de Strahler para el analisis de red de dicha cuenca.  
+  
+  Se utilizaron de igual forma los addons r.info para extraer los valores máximos y mínimos del orden de red segun Strahler partiendo de un raster, delimitada la cuenca a traves de la red de drenaje con r.stream.basins [@jasiewicz2011new]. Para el uso de estadostocas según orden de red de Horton para las redes de Strahler y Horton, se utilizó el addon r.stream.stats [@jasiewicz2011new] en resumen de las estadísticas.
+  
+  Luego de la creación de una nueva región de GRASS en R, se llevaron a números enteros la extensión y la resolución del DEM con las funciones integerextent y xyvector (José Ramón Martínez Batlle, 2018). También se llegó a utilizar la herramienta gdalwarp [@warmerdam2005gdal] para extraer la sesión de GRASS. se usó el addon r.stream.extract, para generar la red de drenaje y obtener las coordenadas que mas adelante seria convetrtidas a  EPGS:4326 [@jain2003adding], como números enteros con la función my_trans. (José Ramón Martínez Batlle, 2020) 
+  
+  Mientras que, para la obtención de los parámetros morfométricos de la cuenca se utilizó el addon r.basin [@di2013open]. Los vectores obtenidos son transformados a EPGS:4326 [@jain2003adding] y así siendo vistos o visualizados con la liobreria leaflet. De igual forma, para explorar los parámetros de la cuenca fue utilizada la libreria readr.
+  
+ Para el cálculo de los índices de concavidad y los perfiles longitudinales, en primer lugar, se extajeron los cursos mas largos de la cuenca en cuestión a través de la función LfpNetwork, para luego emplear la función LfpProfilesConcavity, dicha función arrojó los índices de concavidad para los cursos mas largos, y así mismo, sus perfiles longitudinales.
  
-  Para extraer la cuenca se utilizó el addon r.water.outlet [@lozar2003geographic], usado tambien el addon r.vect, lo que llevó a convertir el raster resultante en vectorial, para así colocacarlo en R. de igual forma se aplicó el addon r.stream.extract [@jasiewicz2011new], para lograr extraer la red de drenaje donde se llevaron a R los resultados del mismo.
+  En la última parte de realización para el cálculo de la curva y la integral hipsométrica de la cuenca, en primer lugar, lo realizado fue representar las cuencas con las librerias sp y mapview; y en segundo lugar, calcular la integral y cuva hipsométrica mediante el uso de la función HypsoIntCurve (José Ramón Martínez Batlle, 2018).
   
-  Por consiguiente, en la orden de red y el analisis hortoniano, se puso en uso el addon r.stream.extract para producir un mapa de direccion de flujo. Por otra parte, para la creación de mapas de ordenes de red se uso el addom r.stream.order [@jasiewicz2011new], en el cual se usó la clasificacion de de Strahler para el analiside red de dicha cuenca.
   
-  Se utilizaron de igual forma los addons r.info para extraer los valores máximos y mínimos del orden de red segun Strahler partiendo de un raster, delimitada la cuenca a traves de la red de drenaje con r.stream.basins [@jasiewicz2011new]. Para el uso de estadostocas segun orden de red de Hortonm para las redes de Strahler y Horton, se utilizó el addon r.stream.stats [@jasiewicz2011new] en resumen de las estadisticas.
-  Para el cálculo de los índices de concavidad y los perfiles longitudinales, en primer lugar, se extajeron los cursos mas largos de la cuenca en cuestión a traves de la función LfpNetwork, para luego emplear la función LfpProfilesConcavity, dicha función arrojó los índices de concavidad para los cursos mas largos, y así mismo, sus perfiles longitudinales.
-  
-  Luego de la creación de una nueva region de GRASS en R, se llevaron a números enteros la extensión y la resolución del DEM con las funciones integerextent y xyvector (José Ramón Martínez Batlle, 2018). Tambien se llegó a utilizar la herramienta gdalwarp [@warmerdam2005gdal] para extraer la sesion de GRASS. se usó el addon r.stream.extract, para generar la red de drenaje y obtener las coordenadas que mas adelante seria convetrtidas a  EPGS:4326 [@jain2003adding], como numeros enteros con la funcion my_trans. (José Ramón Martínez Batlle, 2020) 
-  Mientras que, para la obtención de los parámetros morfométricos de la cuenca se utilizó el addon r.basin [@di2013open]. Los vectores obtenidos son transformados a EPGS:4326 [@jain2003adding] y así siendo vistos o visualizados con la liobreria leaflet. De igual forma, para explorar los parámetros de la cuenca fue utuilizada la libreria readr.
-  Para el cálculo de la curva y la integral hipsometrica de la cuenca, en primer lugar, lo realizado fue representar las cuencas con las librerias sp y mapview; y en segundo lugar, calcular la integral y cuva hipsométrica mediante el uso de la función HypsoIntCurve (José Ramón Martínez Batlle, 2018).
-  
-\ldots
 
 # Resultados
-  En dicho estudio realizado a la cuenca del Soco utilizando el Script Reproducible, revela información que facilita el análisis y comprensión de la cuenca, vierase de manera agrupada como de forma desagregada. Por consiguiente, se presentan de manera resumida, las caracteristicas morfométricas principales de la cuenca en cuestion y su red de drenaje.
+  En este estudio realizado a la cuenca del Soco utilizando el script reproducible, revela información que facilita el análisis y comprensión de la cuenca. vierase de manera agrupada como de forma desagregada. Por consiguiente, se presentan de manera resumida, las caracteristicas morfométricas principales de la cuenca en cuestion y su red de drenaje.
 
-  La cuenca del Soco tiene como area unos 988.62 km2 y un perimetro de 227.63 km, siendo esta la cuenca mas grande de la region este, esta logra alcanzar una elevacion maxima de 646.96m, la elevacion media siendo de 136.34m y la elevacion minima de 0.032, con uno de los relieves mas heterogeneos e irregulares antes analizados. (ver tabla \ref{tablados} y \ref{tablanueve}).
+  Como se muestra en la tabla abajo descrita, la cuenca del Soco tiene como área unos 988.62 km2 y un perímetro de 227.63 km, siendo esta la cuenca mas grande de la región este, esta logra alcanzar una elevación máxima de 646.96m, la elevación media siendo de 136.34m y la elevación mínima de 0.032, con uno de los relieves mas heterogeneos e irregulares antes analizados.
   
-  Observandose la figura (\ref{mapauno}) la forma de la cuenca es ciertamente triangular, con la parte mas ancha en el norte y la punta de la figura en el sur con su desembocadura. Así mismo, los párametros de coeficiente de compacidad, forma de la cuenca y razón de elongación, nos dan la confirmación de la forma triangular de la cuenca en cuestión (ver tabla \ref{tablanueve}).
-  Mientras que la red de drenaje de la cuenca se pueden ver drenajes acumulados y de cierta forma informales, siendo densa en ramificaciones muy regulares tal vemos en la cuenca media alta, al sur (ver figura \ref{mapanueve}); debido a que relive se denota accidentado y a que la composición del material encontrado en la sierra del seibo, elevaciones territoriales importantes en la región y donde nace, por consiguiente, la cuenca del Soco.
-  
-   La red de drenaje de la cuenca, Según Srahler, presenta un total de 461 redes (ver tabla \ref{tablauno}), y se organiza por ordenes desde el numero 1 hasta la numero 5 CITAR DOS FIGURAS 6 Y 10. Donde éstas redes de drenaje de orden uno hasta orden cinco organizados de forma concatenada, van dando como afluentes sus aguas a un curso fluvial mayor hasta llegar al curso principal; las de orden dos, que suman un total de 75, se ve una reduccion en el numero de redes, presentando cierto aumento en el area del orden y descenso en las redes de drenaje de redes, de orden 3 se encontraron 16m de orden 4 se pudo encontrar 5 y por consiguiente, en el orden 5 solo se encontró uno solo.
-   
-   En un análisis se prevee que contenga captura fluvial en los cursos mas largos de drenaje, los cuales generaron los perfiles longitudinales y se obtuvieron los índices de concavidad, la gran mayoría mostraron ser positivos a la concavidad, otros salieron negativos a ella, tratandose de unos 6 con este caso.(ver figura \ref{mapaocho}).
-   
-   Los parametros morfometricos que se obtuvieron (ver tabla \ref{tablasiete}) incluyendo coeficiente  de compacidad que indica que la forma de la superficia de la cuenca de acuerdo con su delimitacion y el predominio en su escorrentía, es muy alargada; pero tomando en cuenta el parametro forma de la cuenca genera un indice el cual indica que la cuenca, ademas de ser muy alargada, es bastante ensanchada por las areas de cuenca media y cuenca alta.
-  
-   De los cursos mas largos, se destaca el numero 5 (ver figura \ref{mapados}), siendo este meramente el rio cabecera, el rio soco, el cual desemboca en la boca del soco al sur de la cuenca, el curso se mueve englobado de norte a sur, presentando lineas concavas que facilitan su curso, creando meandros en su recorrido, politicamente pasa por 3 provincias, cauce formado por piedra caliza y conglomerados, sin presencia de clinoformas, mientras que presenta anchura en su lecho en la parte baja de la cuenca.
-   
-  Por otra parte, en los perfiles podemos apreciar varias lineas convexas, contando con  18 redes convexas, de ordenes menores, llamense 2,3,4, en la parte norte de la cuenca y a los alfuentes de los alrededores, la mayoria desde el numero 31 en adelante. La razon de bifurcacion mostrada en los resultado de la ejecucion (ver tabla \ref{tablasiete}), muestrean una constancia en los numeros y en el area como tal.
-  
-   Tambien están los cursos casi rectilineos como son los caso del los cursos numero 24, 37 y 47 con incides de concavidad menores a 0.18, rectilinios a mas de 50%. la cuencas del soco tiene 461 rios de ordenes contables, lo que la convierte en una de las cuencas mas grandes e importantes de ls nacion.(ver tabla \ref{tablauno})
-   
-   Las estadisticas que son generadas sobre la curva y la integral hipsometrica obtuvieron 75 resultados para los cursos que en red de orden 2 todos con gran similitudes y por lo tanto, pocas diferencias que comentar, todos con curvas moderadas, las cuales muestran un proceso de evolucion historicamente/gemorfologicamente normales.(ver tabla \ref{tabladiez})
-   
-   Para los cursos de agua que estan asignados en orden numero 3 de la cuenca del soco, se produjeron 17 resultados donde los valores mas altos tuvieron cierta evolucion en cuanto a elevacion se refiere, donde todos se realizadon de forma uniforme y con un poco de elevacion media.
+  Table: \label{tablasiete}Parámetros morfométricos de la Cuenca del Soco
 
-# Discusión
-
-  Con  dichos datos anteriormente mencionados, consecuentes a la cuenca del Soco, hemos respondido preguntas planteadas sobre que tan lejos esta el inicio de la cuenca, forma de la misma y su red de drenaje, organizacion de esta y la relacion de los perfiles longitudinales y su indice de de concavidad junto a la litología en la cuenca. Sin embargo,  las preguntas concernientes a la relacion de los parametros de la cuenca con la litología en la cuenca, como la importancia de esta cuenca para el lugar situado, y las demas concernientes a la curva hipsometrica, no han han sido respondidas a razon de la falta de informacion e investigaciones, increiblmente al pasar de los años no existe informacion concreta sobre la cuenca del soco. Tal es que la informacion encontrada fue sobre la Boca del Soco dada por el Servicio Geologico Nacional.
-  
-  La cuenca tiene forma de triangulo isosceles invertido, y la forma de la red de drenaje es dendritrica. Dicha cuenca produce esta forma en zonas de relieve notoriamente heterogeneo, como se presenta la parte de cuenca alta; los cursos de agua van desarrollandose libremente y no van dependiendo de un control estructural. Es normal en los ordenes de Red de las cuencas, desde el orden 1 al orden 5, principalmente en las de orden 5, tipos de rocas y relieve mas heterogeneo, producto al arrastre de la escorrentía desde afluentes a este mas arriba. 
-  
-  Segun estudiosos como Summerfield, explican quye la razon de bifurcacion que se encuentra entre 3 y 5, da a lugar que la litología del area es semi homogenea. en la tabla \ref{tablasiete} son visibles los valores ciertamente dentro del mismo rango. Notese como los ordenes 1,2,3 y 4, mantienen cierta homogeniedad en la litología.
-  
-  Los cursos fluviales mas largos de la orden de red encontrados en en análisis de la cuenca del soco fueron los: 5, 7, 23, 14, 25 y 40, dichos cursos no se encuentran registrados con nombres directos segun lo investigado en otras fuentes. Si conocemos que está el rio Soco, Rio cabecera de la cuenca, siendo este el curso fluvial numero cinco con alrededor de 61 km de largo, desembocando en la boca del soco, donde termina la cuenca. Cabe destacar que esta boca tiene costas de manglares hasta su llegada a la playa.
-  
-  Comparando los resultados de la vectorial (ver tabla \ref{tablauno}) y el que se obtuvo con r. basin (ver tabla \ref{tablaocho}), el curso mas largo es el numero 5, obtenido gracias a la función lfpNetwprk. Por lo que gracias a la confirmación doble notamos que el río Soco es el rio mas largo de la cuenca en cuestion.
-  
-  En el área de La curva y la integral hipsométrica se muestra una repartición de elevaciones de la cuenca [@jose_ramon_martinez_batlle_2021_4425878], el valor minimo generado para la integral hipsometrica fue de 0.04. en los cursos mas curvos tenemos a los números 30 a 35 (ver tabla \ref{tablados}). Los cursos 73 y 75 son los mas rectilineos y su integral hipsométrica es moderada por lo que estos cursos han experimentado una evolucion lenta en su elevación.(ver tabla \ref{mapados})
-  
-  Los cursos propios de la orden de red 3, el curso de mayor valor numerico (16) muestra una inestable evolucion y elevacion (ver tabla \ref{mapacuatro})
-  
-  Aunque no se pudo hacer una comparacion concreta de informacion obtenida en el uso de software libre de la cuenca del soco con otras fuentes, el uso de las mismas fue usado de forma cuantitativamente productiva. Cabe destacar que toda esta información ha servido como puerta a investigaciones futuras sobre morfometría fluvial en el país.
-  
-  Esto creo esperanzas de nuevas investigaciones cercanamente futuras y ayuda al desarrollo informativo de la Geografia Dominicana.
-
-# Agradecimientos
-
-A Dios, por otorgar las fuerzas necesarias para realizar lo visto
-Al M.A. Jose Ramon Martinez Batlle, por su paciencia y dedicación al enseñar con la intención de dejar una marca inolvidable en mi mente.
-A mis padres, Angel Maria de la Rosa (Wilden) por enseñarme sobre redacción y Maireny Esmeralda Caraballo Jimenez, por sus consejos y ánimos
-A mi hermano, Isaias De La Rosa.
-A mi mismo, por la fuerza de lo voluntad que gracias a Dios poseo.
-
-# Información de soporte
-
-Table: \label{tablauno}Estadisticas de los ordenes de red de la Cuenca del Soco
-
-| Pedido máximo | Tot.N.str. | Tot.str.len. | Tot.area. | Dr.dens    | Str.freq.   |
-|---------------|------------|--------------|-----------|------------|-------------|
-| (núm)         | (núm)      | (km)         | (km2)     | (km / km2) | (núm / km2) |
-| 5             | 461        | 827.6249     | 988.6235  | 0,8371     | 0.4663      |.
-
-Table: \label{tablados}Tasas de transmisión basadas en el coeficiente de regresión  
-
-| Bif.rt. | Len.rt. | Area.rt | Slo.rt. | Grd.rt. |
-|---------|---------|---------|---------|---------|
-| 4,3627  | 2,5513  | 4.8325  | 1,3319  | 1.8136  |
-
-Table: \label{tablatres}Relaciones de flujo promediadas con desviaciones estándar
-
-| Bif.rt. | Len.rt. | Area.rt | Slo.rt. | Grd.rt. |
-|---------|---------|---------|---------|---------|
-| 4,3885  | 2,8660  | 3,4625  | 1,3500  | 1,8220  |
-| 0,4546  | 1,2377  | 2,3496  | 0,3823  | 0,2300  |
-
-![Forma de la Cuenca del Soco\label{mapacero}](form cu soc.png)
-
-![Perfiles Longitudinales de los cursos mas largos en la Cuenca del Soco\label{mapauno}](perf mas largo.png){width=50%}
-
-![Cuenca de Orden de Red Numero 2\label{mapados}](c de red o dos.png){width=70%}
-
-![Red de Drenaje de orden Dos\label{mapatres}](cu drena or dos.png){width=70%}
-
-![Cuenca de Orden de Red Numero Tres\label{mapacuatro}](cu de red or tres.png){width=70%}
-
-![Red de Drenaje de orden Dos\label{mapacinco}](cu drena or tres.png){width=70%}
-
-![Numero de ordenes de Redes y Razon de Bifurcación\label{mapaseis}](num redes razon bif.png){width=70%}
-
-![Ordenes de Red de la ceuenca del Soco con única Simbología\label{mapasiete}](unica sim.png){width=70%}
-
-![Perfiles Longitudinlaes e indices de concavidad de los cursos mas largos de la cuenca del Soco\label{mapaocho}](mas largos.png){width=70%}
-
-![Red de Drenaje de la Cuenca del Soco\label{mapanueve}](denaje.png){width=70%}
-
-![Red de Drenaje según su Orden de Red en la Cuenca del Soco\label{mapadiez}](drenaje segun orden.png){width=70%}
-
-Table: \label{tablacuatro}Variables promediadas para cada orden de red.
-
-| Order  Num  | Avg.len (km) | Avg.ar (km2) | Avg.sl (m/m) | Avg.grad. (m/m) | Avg.el.dif (m) |
-|-------------|--------------|--------------|--------------|-----------------|----------------|
-| 1           | 1.0951       | 1.6194       | 0.0218       | 0.0162          | 17.6603        |
-| 2           | 2.9720       | 8.3544       | 0.0133       | 0.0100          | 33.2667        |
-| 3           | 6.0900       | 34.1317      | 0.0081       | 0.0049          | 31.2500        |
-| 4           | 12.4215      | 157.2015     | 0.0063       | 0.0030          | 38.2500        |
-| 5           | 57.8980      | 983.8981     | 0.0076       | 0.0015          | 87.0000        |
-
-
-Table: \label{tablacinco}Desviacion estandar para las estadisticas segfun orden de red
-
-
-| Order  Num  | Std.len (km) | Std.ar (km2) | Std.sl (m/m) | Std.grad (m/m) | Std.el.dif (m) |
-|-------------|--------------|--------------|--------------|----------------|----------------|
-| 1           | 0.8702       | 1.0490       | 0.0234       | 0.0174         | 21.0933        |
-| 2           | 2.3431       | 5.3580       | 0.0083       | 0.0076         | 47.5177        |
-| 3           | 4.2366       | 19.5514      | 0.0029       | 0.0023         | 20.9269        |
-| 4           | 7.8694       | 72.9224      | 0.0004       | 0.0005         | 8.2297         |
-| 5           | 0.0000       | 0.0000       | 0.0000       | 0.0000         | 0.0000         |
-
-
-Table: \label{tablaseis}Razones de los parametros hidrograficos segun el orden de red
-
-
-Order  | N.streams | Tot.len (km) | Tot.area (km2)|
-|------|-----------|--------------|---------------|
-|    1 |       365 |     399.7040 | 591.0968      |
-|    2 |        75 |     222.8964 | 626.5809      |
-|    3 |        16 |      97.4407 | 546.1068      |
-|    4 |         4 |      49.6858 | 628.8060      |
-|    5 |         1 |      57.8980 | 983.8981      |
-
-Table: \label{tablasiete}Razones de los parametros hidrograficos segun su orden de red
-
-Order | Bif.rt. | Len.rt. | Area.rt. | Slo.rt. | Grd.rt. | d.dens. | str.freq.
-|-----|---------|---------|----------|---------|---------|---------|---------|
-    1 |  4.8667 |  2.7139 |   0.0000 |  1.6406 |  1.6100 |  0.6762 |  0.6175 |
-    2 |  4.6875 |  2.0492 |   5.1588 |  1.6358 |  2.0326 |  0.3557 |  0.1197 |
-    3 |  4.0000 |  2.0396 |   4.0855 |  1.2922 |  1.6364 |  0.1784 |  0.0293 |
-    4 |  4.0000 |  4.6611 |   4.6057 |  0.8313 |  2.0090 |  0.0790 |  0.0064 |
-    5 |  0.0000 |  0.0000 |   6.2588 |  0.0000 |  0.0000 |  0.0588 |  0.0010 |
-
-
-Table: \label{tablasiete}Parametros morfometricos de la Cuenca del Soco
-
-
-
-| Parametros                                                  | Valores                 |
+| Párametros                                                  | Valores                 |
 |-------------------------------------------------------------|-------------------------|
 | Easting Centroid of basin                                   | 489195.00               |
 | Northing Centroid of basin                                  | 2072655.00              |
@@ -256,6 +126,72 @@ Table: \label{tablasiete}Parametros morfometricos de la Cuenca del Soco
 | Length Ratio (Horton)                                       | 2.4703                  |
 | Area ratio (Horton)                                         | 4.6963                  |
 | Slope ratio (Horton)                                        | 1.3574                  |
+
+  
+  ![Forma de la Cuenca del Soco\label{mapacero}](form cu soc.png) 
+  
+   Observandose la figura la forma de la cuenca es ciertamente triangular, con la parte mas ancha en el norte y la punta de la figura en el sur con su desembocadura. Así mismo, los párametros de coeficiente de compacidad, forma de la cuenca y razón de elongación, nos dan la confirmación de la forma triangular de la cuenca en cuestión (ver tabla \ref{tablanueve}).
+  Mientras que la red de drenaje de la cuenca se pueden ver drenajes acumulados y de cierta forma informales, siendo densa en ramificaciones muy regulares tal vemos en la cuenca media alta, al sur; debido a que relive se denota accidentado y a que la composición del material encontrado en la sierra del seibo, elevaciones territoriales importantes en la región y donde nace, por consiguiente, la cuenca del Soco.
+
+![Red de Drenaje de la Cuenca del Soco\label{mapanueve}](denaje.png){width=70%}
+   
+   La red de drenaje de la cuenca, Según Srahler, presenta un total de 461 redes (ver tabla \ref{tablauno}), y se organiza por ordenes desde el numero 1 hasta la numero 5 
+   
+![Número de ordenes de Redes y Razón de Bifurcación\label{mapaseis}](num redes razon bif.png){width=70%}
+   
+
+![Red de Drenaje según su Orden de Red en la Cuenca del Soco\label{mapadiez}](drenaje segun orden.png){width=70%}
+ 
+ 
+   Donde éstas redes de drenaje de orden uno hasta orden cinco organizados de forma concatenada, van dando como afluentes sus aguas a un curso fluvial mayor hasta llegar al curso principal; las de orden dos, que suman un total de 75, se ve una reducción en el número de redes, presentando cierto aumento en el area del orden y descenso en las redes de drenaje de redes, de orden 3 se encontraron 16m de orden 4 se pudo encontrar 5 y por consiguiente, en el orden 5 solo se encontró uno solo.
+   
+   En un análisis se prevee que contenga captura fluvial en los cursos mas largos de drenaje, los cuales generaron los perfiles longitudinales y se obtuvieron los índices de concavidad, la gran mayoría mostraron ser positivos a la concavidad, otros salieron negativos a ella, tratandose de unos 6 con este caso.(ver figura \ref{mapaocho}).
+   
+   ![Perfiles Longitudinlaes e indices de concavidad de los cursos mas largos de la cuenca del Soco\label{mapaocho}](mas largos.png){width=70%}
+   
+   Los parámetros morfométricos que se obtuvieron (ver tabla \ref{tablasiete}) incluyendo coeficiente  de compacidad que indica que la forma de la superficial de la cuenca de acuerdo con su delimitación y el predominio en su escorrentía, es muy alargada; pero tomando en cuenta el parámetro forma de la cuenca genera un índice el cual indica que la cuenca, además de ser muy alargada, es bastante ensanchada por las áreas de cuenca media y cuenca alta.
+  
+   De los cursos mas largos, se destaca el número 5 (ver figura \ref{mapados}), siendo este meramente el rio cabecera, el rio soco, el cual desemboca en la boca del soco al sur de la cuenca, el curso se mueve englobado de norte a sur, presentando líneas concavas que facilitan su curso, creando meandros en su recorrido, políticamente pasa por 3 provincias, libros del servicio Geológico Nacional del 2019 muestran un cauce formado por piedra caliza y conglomerados, sin presencia de clinoformas, mientras que presenta anchura en su lecho en la parte baja de la cuenca,.
+   
+  Por otra parte, en los perfiles podemos apreciar varias líneas convexas, contando con  18 redes convexas, de órdenes menores, llámense 2,3,4, en la parte norte de la cuenca y a los alfuentes de los alrededores, la mayoría desde el número 31 en adelante. La razón de bifurcación mostrada en los resultado de la ejecución (ver tabla \ref{tablasiete}), muestrean una constancia en los números y en el área como tal.
+  
+   También están los cursos casi rectilíneos como son los caso del los cursos numero 24, 37 y 47 con índices de concavidad menores a 0.18, rectilíneos a mas de 50%. la cuencas del soco tiene 461 ríos de órdenes contables, lo que la convierte en una de las cuencas mas grandes e importantes de la nación.(ver tabla \ref{tablauno})
+
+  Table: \label{tablauno} Estadísticas de los ordenes de red de la Cuenca del Soco
+
+| Pedido máximo | Tot.N.str. | Tot.str.len. | Tot.area. | Dr.dens    | Str.freq.   |
+|---------------|------------|--------------|-----------|------------|-------------|
+| (núm)         | (núm)      | (km)         | (km2)     | (km / km2) | (núm / km2) |
+| 5             | 461        | 827.6249     | 988.6235  | 0,8371     | 0.4663      |
+
+   Las estadísticas que son generadas sobre la curva y la integral hipsométrica obtuvieron 75 resultados para los cursos que en red de orden 2 todos con gran similitudes y por lo tanto, pocas diferencias que comentar, todos con curvas moderadas, las cuales muestran un proceso de evolución históricamente/gemorfológicamente normales.(ver tabla \ref{tablaocho} y ver mapa \label{mapados})
+   
+   Para los cursos de agua que estan asignados en orden número 3 de la cuenca del soco, se produjeron 17 resultados donde los valores mas altos tuvieron cierta evolución en cuanto a elevación se refiere, donde todos se realizaron de forma uniforme y con un poco de elevación media.
+
+# Discusión
+
+  Con  dichos datos anteriormente mencionados, consecuentes a la cuenca del Soco, hemos respondido preguntas planteadas de investigación en marcha sobre que tan lejos esta el inicio de la cuenca, forma de la misma y su red de drenaje, organización de esta y la relacion de los perfiles longitudinales y su índice de de concavidad junto a la litología en la cuenca. Sin embargo,  las preguntas concernientes a la relación de los parámetros de la cuenca con la litología en la cuenca, como la importancia de esta cuenca para el lugar situado, no han han sido respondidas a razón de la falta de información e investigaciones, al pasar de los años no se ha provisto de  información concreta sobre la cuenca del soco. Tal es que la información encontrada fue sobre la Boca del Soco dada por el Servicio Geologico Nacional.
+  
+  La cuenca tiene forma de triangulo isosceles invertido, y la forma de la red de drenaje es dendrítrica. Dicha cuenca produce esta forma en zonas de relieve notoriamente heterogeneo, como se presenta la parte de cuenca alta; los cursos de agua van desarrollandose libremente y no van dependiendo de un control estructural. Es normal en los ordenes de red de las cuencas, desde el orden 1 al orden 5, principalmente en las de orden 5, tipos de rocas y relieve mas heterogeneo, producto al arrastre de la escorrentía desde afluentes a este mas arriba. 
+  
+  Según estudiosos como Summerfield, explican que la razon de bifurcación que se encuentra entre 3 y 5, da a lugar que la litología del área es semi homogenea. en la tabla \ref{tablasiete}  son visibles los valores ciertamente dentro del mismo rango. Notese como los ordenes 1,2,3 y 4, mantienen cierta homogeniedad en la litología.
+ 
+  Table: \label{tablasiete}Razones de los parametros hidrograficos segun su orden de red.
+
+Order | Bif.rt. | Len.rt. | Area.rt. | Slo.rt. | Grd.rt. | d.dens. | str.freq.
+|-----|---------|---------|----------|---------|---------|---------|---------|
+    1 |  4.8667 |  2.7139 |   0.0000 |  1.6406 |  1.6100 |  0.6762 |  0.6175 |
+    2 |  4.6875 |  2.0492 |   5.1588 |  1.6358 |  2.0326 |  0.3557 |  0.1197 |
+    3 |  4.0000 |  2.0396 |   4.0855 |  1.2922 |  1.6364 |  0.1784 |  0.0293 |
+    4 |  4.0000 |  4.6611 |   4.6057 |  0.8313 |  2.0090 |  0.0790 |  0.0064 |
+    5 |  0.0000 |  0.0000 |   6.2588 |  0.0000 |  0.0000 |  0.0588 |  0.0010 |
+    
+  Los cursos fluviales mas largos de la orden de red encontrados en en análisis de la cuenca del soco fueron los: 5, 7, 23, 14, 25 y 40, dichos cursos no se encuentran registrados con nombres directos según lo investigado en otras fuentes. Sí conocemos que está el rio Soco, Rio cabecera de la cuenca, siendo este el curso fluvial numero cinco con alrededor de 61 km de largo, desembocando en la boca del soco, donde termina la cuenca. Cabe destacar que esta boca tiene costas de manglares hasta su llegada a la playa, observadas presencialmente desde el puente que cruza el río.
+  
+   ![Cuenca de Orden de Red Numero 2\label{mapados}](c de red o dos.png){width=70%} 
+   
+  Comparando los resultados de la vectorial (ver tabla \ref{tablauno}) y el que se obtuvo con r. basin (ver tabla \ref{tablaocho}), el curso mas largo es el numero 5, obtenido gracias a la función lfpNetwprk. Por lo que gracias a la confirmación doble notamos que el río Soco es el curso mas largo de la cuenca en cuestión.
+ 
 
 Table: \label{tablaocho}Integral Hipsometrica en las cuencas de Orden 2
 
@@ -337,6 +273,94 @@ Table: \label{tablaocho}Integral Hipsometrica en las cuencas de Orden 2
 | 74  | 83 | 0.76043899|
 | 75  | 85 | 0.44416178|
 
+  En el área de La curva y la integral hipsométrica se muestra una repartición de elevaciones de la cuenca [@jose_ramon_martinez_batlle_2021_4425878], el valor minimo generado para la integral hipsométrica fue de 0.04. en los cursos mas curvos tenemos a los números 30 a 35 (ver tabla \ref{tablados}). Los cursos 73 y 75 son los mas rectilineos y su integral hipsométrica es moderada por lo que estos cursos han experimentado una evolución lenta en su elevación.(ver tabla \ref{mapados})
+ 
+  Los cursos propios de la orden de red 3, el curso de mayor valor numérico (16) muestra una inestable evolución y elevación (ver tabla \ref{mapacuatro})
+  
+  ![Cuenca de Orden de Red Numero Tres\label{mapacuatro}](cu de red or tres.png){width=70%}
+
+El orden estructurado de la cuenca muestra una afirmacion a la pregunta sobre la estructura de ordenes de la cuenca del soco, se concluye que es posible colocar una represa pequeña dedicada a la producción de electricidad, siempre y cuando se sitúe en área de pendiente semi inclinada y en el río cabecera, convenientemente en una de sus confluencias mas cercanas a la desemmbocadura, ya que la pendiente creada desde la cordillera Oriental llevando aguas a la Llanura Costera del Caribe, crea una fuerte escorrentía aprovechable.
+ 
+  La cuenca del Soco tiene otras ventajas importantes las cuales se relaciónan al terreno, y cabe destacar que los terratenientes de esas areas no suelen utilizar aguas del río para abastecimiento.
+ 
+  Aunque no se pudo hacer una comparación concreta de información obtenida en el uso de software libre de la cuenca del soco con otras fuentes, el uso de las mismas fue usado de forma cuantitativamente productiva. Cabe destacar que toda esta información ha servido como puerta a investigaciones futuras sobre morfometría fluvial en el país.
+  
+  Esto crea esperanzas de nuevas investigaciones cercanamente futuras y ayuda al desarrollo informativo de la Geografia Dominicana, siendo un reto para el estudio de movimientos geomorfologicos futuros siendo comparados con los datos de esta investigación.
+
+# Agradecimientos
+
+  A Dios, por otorgar las fuerzas necesarias para realizar lo visto
+  
+  Al M.A. Jose Ramon Martinez Batlle, por su paciencia y dedicación al enseñar con la intención de dejar una marca inolvidable en mi mente.
+  
+  A mis padres, Angel Maria de la Rosa (Wilden) por enseñarme sobre redacción y Maireny Esmeralda Caraballo Jimenez, por sus consejos y ánimos
+  
+  A mi hermano, Isaias De La Rosa.
+  
+  A mi mismo, por la fuerza de lo voluntad que gracias a Dios poseo.
+
+# Información de soporte
+
+Table: \label{tablados}Tasas de transmisión basadas en el coeficiente de regresión  
+
+| Bif.rt. | Len.rt. | Area.rt | Slo.rt. | Grd.rt. |
+|---------|---------|---------|---------|---------|
+| 4,3627  | 2,5513  | 4.8325  | 1,3319  | 1.8136  |
+
+Table: \label{tablatres}Relaciones de flujo promediadas con desviaciones estándar
+
+| Bif.rt. | Len.rt. | Area.rt | Slo.rt. | Grd.rt. |
+|---------|---------|---------|---------|---------|
+| 4,3885  | 2,8660  | 3,4625  | 1,3500  | 1,8220  |
+| 0,4546  | 1,2377  | 2,3496  | 0,3823  | 0,2300  |
+
+
+![Perfiles Longitudinales de los cursos mas largos en la Cuenca del Soco\label{mapauno}](perf mas largo.png){width=50%}
+
+![Red de Drenaje de orden Dos\label{mapatres}](cu drena or dos.png){width=70%}
+
+![Red de Drenaje de orden Dos\label{mapacinco}](cu drena or tres.png){width=70%}
+
+![Ordenes de Red de la cuenca del Soco con única Simbología\label{mapasiete}](unica sim.png){width=70%}
+
+
+
+
+Table: \label{tablacuatro}Variables promediadas para cada orden de red.
+
+| Order  Num  | Avg.len (km) | Avg.ar (km2) | Avg.sl (m/m) | Avg.grad. (m/m) | Avg.el.dif (m) |
+|-------------|--------------|--------------|--------------|-----------------|----------------|
+| 1           | 1.0951       | 1.6194       | 0.0218       | 0.0162          | 17.6603        |
+| 2           | 2.9720       | 8.3544       | 0.0133       | 0.0100          | 33.2667        |
+| 3           | 6.0900       | 34.1317      | 0.0081       | 0.0049          | 31.2500        |
+| 4           | 12.4215      | 157.2015     | 0.0063       | 0.0030          | 38.2500        |
+| 5           | 57.8980      | 983.8981     | 0.0076       | 0.0015          | 87.0000        |
+
+
+Table: \label{tablacinco}Desviación estandar para las estadísticas según orden de red
+
+
+| Order  Num  | Std.len (km) | Std.ar (km2) | Std.sl (m/m) | Std.grad (m/m) | Std.el.dif (m) |
+|-------------|--------------|--------------|--------------|----------------|----------------|
+| 1           | 0.8702       | 1.0490       | 0.0234       | 0.0174         | 21.0933        |
+| 2           | 2.3431       | 5.3580       | 0.0083       | 0.0076         | 47.5177        |
+| 3           | 4.2366       | 19.5514      | 0.0029       | 0.0023         | 20.9269        |
+| 4           | 7.8694       | 72.9224      | 0.0004       | 0.0005         | 8.2297         |
+| 5           | 0.0000       | 0.0000       | 0.0000       | 0.0000         | 0.0000         |
+
+
+Table: \label{tablaseis}Razones de los parámetros hidrográficos según el orden de red
+
+
+Order  | N.streams | Tot.len (km) | Tot.area (km2)|
+|------|-----------|--------------|---------------|
+|    1 |       365 |     399.7040 | 591.0968      |
+|    2 |        75 |     222.8964 | 626.5809      |
+|    3 |        16 |      97.4407 | 546.1068      |
+|    4 |         4 |      49.6858 | 628.8060      |
+|    5 |         1 |      57.8980 | 983.8981      |
+
+
 Table: \label{tablanueve}Integral Hipsometrica en las cuencas de orden 3
 
 |ord |cat |Int. Hipso |
@@ -358,6 +382,8 @@ Table: \label{tablanueve}Integral Hipsometrica en las cuencas de orden 3
 | 15 |  15| 0.3884555 | 
 | 16 |  16| 0.5907859 | 
 
+
+
 Table: \label{tablanueva} Herramientas utilizadas para el Análisis
 
 |           Materiales          	|                                                                                                                      Uso                                                                                                                     	|
@@ -373,11 +399,13 @@ Table: \label{tablanueva} Herramientas utilizadas para el Análisis
 |         library readr         	| Lector de datos rectangulares (como 'csv', 'tsv' y 'fwf').                                                                                                                  	|
 |        QGIS with GRASS        	| Visualizador de vectores y rasters generados con RStudio en una región de GRASS, de los mapas Topográfico y Geológico de la República Dominicana, y, también, Creador de mapas de localización. 	|
 |          Google Earth         	| Utilizado para observar datos en formato kml generados y exportados de RStudio y asi como para la representación del relieve del lugar de estudio.                                                                                                          	|
-|     Mapa Topográfico de RD     	| Mapa para hacer comparaciones y obtener referencias sobre el relieve.                                                                                                                                                                             	|
-| Mapa Geológico Nacional de RD 	| Mapa para hacer comparaciones y obtener referencias sobre la composición rocosa y los años que datan estas (ver figura\ref{geologico}).                                                                                                                                       	|
-Table: \label{tab:materiales} Materiales utilizados en la investigacion.
+                                                                                                                                     	
+
 # *Script* reproducible
 
+````
+`r paste(readLines('scrip_reproducible_r_isaac.R'), collapse = '\n')`
+````
 
 
 # Referencias
